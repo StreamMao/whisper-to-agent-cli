@@ -1,0 +1,27 @@
+# Secrets - NEVER commit
+.env
+*.key
+*.pem
+# legacy file removed - kept ignored for safety if recreated
+appdata/whisperkey/groq_key.txt
+appdata/whisperkey/app.log
+
+# Config with personal hotwords - keep example, ignore local overrides?
+# Uncomment if you want to keep your hotwords private:
+# appdata/whisperkey/user_settings.yaml
+# appdata/whisperkey/commands.yaml
+
+# Large binaries / caches - not for GitHub
+venv/
+models/
+pip-cache/
+__pycache__/
+*.pyc
+*.pyo
+sherpa/
+# If you want to ship sherpa model, use Git LFS or provide download script instead
+
+# OS
+.DS_Store
+Thumbs.db
+*.log

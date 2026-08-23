@@ -1,0 +1,27 @@
+# Whisper Key 0.8.2 - User Settings
+#
+# Available settings: https://github.com/PinW/whisper-key-local/tree/v0.8.2?tab=readme-ov-file#%EF%B8%8F-configuration
+# Defaults reference: https://github.com/PinW/whisper-key-local/blob/v0.8.2/src/whisper_key/config.defaults.yaml
+
+audio:
+  host: MME
+whisper:
+  # Forced to zh: your dictation is Chinese-dominant, and forcing the language
+  # roughly halves transcription time (skips detection + avoids fallback chain)
+  # and improves accuracy. Set back to 'auto' if you ever dictate mostly English.
+  language: zh
+  # base: much faster load (~1.5s vs ~4.5s) and faster transcription than small,
+  # with modestly lower accuracy. Switch to tiny for maximum speed, small for
+  # better accuracy.
+  model: base
+  initial_prompt: "请逐字转录中英混合语音：中文用简体字输出，英文单词、文件名和代码标识符保留英文原样（如 README.md、.py、opencode、GitHub）。不要用中文音译英文。"
+  # Frequently dictated tokens: fed into the transcription prompt (better
+  # spelling) and used to normalize the output. Add anything you dictate often.
+  hotwords:
+    - README.md
+    - opencode
+    - GitHub
+clipboard:
+  paste_preserve_clipboard: false
+onboarding:
+  gpu: no_gpu
